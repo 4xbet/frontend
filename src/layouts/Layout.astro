@@ -1,3 +1,10 @@
+---                            
+import '../styles/global.css' 
+import Header from '../components/Header.astro'
+import background from '@/assets/background.svg';
+---       
+
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,8 +14,12 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
-		<slot />
+	<body class="dark">
+		<Header />
+		<img class="absolute top-20 left-0 background-svg" id="background" src={background.src} alt="" fetchpriority="high" />
+		<main class="mx-5">
+			<slot />
+		</main>
 	</body>
 </html>
 
@@ -18,5 +29,9 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	.background-svg {
+		width: 100vw;
 	}
 </style>
