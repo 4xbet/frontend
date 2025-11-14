@@ -1,13 +1,13 @@
 <template>
-    <div class="add-todo-form">
-        <UiInput
-            v-model="newTodoTitle"
-            placeholder="Add a new todo..."
-            @keyup.enter="handleAddTodo"
-            class="flex-grow"
-        />
-        <UiButton @click="handleAddTodo">Add Todo</UiButton>
-    </div>
+  <div class="add-todo-form">
+    <UiInput
+      v-model="newTodoTitle"
+      placeholder="Add a new todo..."
+      @keyup.enter="handleAddTodo"
+      class="flex-grow"
+    />
+    <UiButton @click="handleAddTodo">Add Todo</UiButton>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -22,23 +22,23 @@ const newTodoTitle = ref('');
 const emit = defineEmits(['todo-added']);
 
 const handleAddTodo = () => {
-    if (newTodoTitle.value.trim()) {
-        todoStore.addTodo(newTodoTitle.value);
-        newTodoTitle.value = ''; // Clear input after adding
-        emit('todo-added'); // Emit event to notify parent
-    }
+  if (newTodoTitle.value.trim()) {
+    todoStore.addTodo(newTodoTitle.value);
+    newTodoTitle.value = ''; // Clear input after adding
+    emit('todo-added'); // Emit event to notify parent
+  }
 };
 </script>
 
 <style scoped>
 .add-todo-form {
-    display: flex;
-    margin-bottom: 1.5rem;
-    gap: 0.5rem;
-    align-items: center;
+  display: flex;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .flex-grow {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 </style>

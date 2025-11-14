@@ -5,26 +5,26 @@ import About from '../views/About.vue';
 import TodoList from '../views/TodoList.vue';
 
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home,
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: About,
-    },
-    {
-        path: '/todos',
-        name: 'TodoList',
-        component: TodoList,
-    },
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About,
+  },
+  {
+    path: '/todos',
+    name: 'TodoList',
+    component: TodoList,
+  },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;
